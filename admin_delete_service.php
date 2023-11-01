@@ -19,7 +19,7 @@ if (isset($_GET['service_id'])) {
 }
 ?>
 
-<h1>Xóa Dịch Vụ</h1>
+<h1>Delete Service</h1>
 <p>Bạn có chắc chắn muốn xóa dịch vụ: <?php echo $service['name']; ?>?</p>
 <form method="POST">
     <input type="hidden" name="service_id" value="<?php echo $serviceId; ?>">

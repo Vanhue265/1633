@@ -12,7 +12,7 @@
             echo '<li><a href="login.php">Login</a></li>';
             echo '<li><a href="register.php">Register</a></li>';
         } else {
-            echo '<li><a href="logout.php">Profile</a></li>';
+            // echo '<li><a href="index.php">Home</a></li>';
             echo '<li><a href="logout.php">Logout</a></li>';
             echo '<li><a href="services.php">List Services</a></li>';
             echo '<li><a href="appointments.php">List Appointments</a></li>';

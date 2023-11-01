@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
     <head> 
-        <title>Trang Chủ</title> 
+        <title>THome page</title> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css"> 
         <link rel="stylesheet" href="resource/css/style.css"> 
     </head> 

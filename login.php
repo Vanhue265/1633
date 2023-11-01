@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     } else {
-        $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác.";
+        $error_message = "Username or password incorrect.";
     }
 }
 ?>
@@ -43,14 +43,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
         <form method="POST">
             <div class="mb-3">
-                <label for="username" class="form-label">Tên đăng nhập:</label>
+                <label for="username" class="form-label">Username:</label>
                 <input type="text" class="form-control" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Mật khẩu:</label>
+                <label for="password" class="form-label">password:</label>
                 <input type="password" class="form-control" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
   </div>
 </body>

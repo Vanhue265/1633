@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['appointment_id'])) {
     if (mysqli_query($conn, $update_query)) {
         // Trạng thái đã được cập nhật thành công
     } else {
-        $error_message = "Lỗi khi cập nhật trạng thái.";
+        $error_message = "Error updating status.";
     }
 }
 
