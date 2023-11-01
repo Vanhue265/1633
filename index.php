@@ -9,7 +9,8 @@
         <div class="container"> 
             <h1>Home page</h1> 
             <p>Welcome to the pet care services website.</p> 
-            <p>Đăng nhập hoặc đăng ký để truy cập các dịch vụ của chúng tôi.</p> 
+            <p>Login or register to access our services.</p> 
+            <img src="resource/image/petstore.jpg" alt="">
             <ul class="nav"> <li class="nav-item"> 
                 <a class="nav-link" href="login.php">Login</a> 
                 </li> <li class="nav-item"> 
