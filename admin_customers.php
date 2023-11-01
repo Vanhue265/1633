@@ -1,15 +1,13 @@
 <?php
 session_start();
 
-// Kiểm tra vai trò của người dùng. Chỉ admin mới có quyền truy cập trang này.
 if ($_SESSION['user_role'] !== 'admin') {
-    header("Location: login.php"); // Chuyển hướng đến trang đăng nhập nếu không phải admin.
+    header("Location: login.php"); 
     exit();
 }
 
-require_once 'connect.php'; // Sử dụng tệp kết nối cơ sở dữ liệu.
+require_once 'connect.php'; 
 
-// Truy vấn cơ sở dữ liệu để lấy danh sách khách hàng (is_admin = 0 cho người dùng không phải admin).
 $query = "SELECT * FROM users WHERE is_admin = 0";
 $result = mysqli_query($conn, $query);
 $customers = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -19,28 +17,76 @@ $customers = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <html>
 <head>
     <title>Danh sách khách hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background-color: #555;
+        }
+
+        a.return-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Danh sách khách hàng</h1>
+    <h1>List of customers</h1>
     <table>
         <tr>
-            <th>Tên</th>
-            <th>Địa chỉ</th>
-            <th>Email</th>
+            <th>Name of Customer</th>
+            <th>View appointment schedule</th>
         </tr>
         <?php foreach ($customers as $customer) : ?>
             <tr>
                 <td><?php echo $customer['username']; ?></td>
-                <td><?php echo isset($customer['address']) ? $customer['address'] : 'N/A'; ?></td>
-                <td><?php echo isset($customer['email']) ? $customer['email'] : 'N/A'; ?></td>
                 <td>
-                    <a href="admin_customer_appointments.php?customer_id=<?php echo $customer['id']; ?>">Xem lịch hẹn</a>
+                    <a href="admin_customer_appointments.php?customer_id=<?php echo $customer['id']; ?>">View</a>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
 
-    <a href="admin_dashboard.php">Quay lại trang dashboard</a>
+    <a class="return-link" href="admin_dashboard.php">Return to the dashboard page</a>
 </body>
 </html>
+
 
