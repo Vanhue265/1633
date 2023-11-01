@@ -32,28 +32,29 @@ $appointments = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Danh sách lịch hẹn của bạn</title>
+    <title>List of your appointments</title>
+    <link rel="stylesheet" type="text/css" href="css/Flowerf.css">
 </head>
-<body>
-    <h1>Danh sách lịch hẹn của bạn</h1>
+<body class"AppointmentsBody">
+    <h1>List of your appointments</h1>
 
     <ul>
         <?php foreach ($appointments as $appointment) : ?>
             <li>
-                <h3><?php echo $appointment['service_name']; ?></h3>
-                <p>Ngày: <?php echo $appointment['appointment_date']; ?></p>
-                <p>Giờ: <?php echo $appointment['appointment_time']; ?></p>
-                <p>Trạng thái: <?php echo ($appointment['is_paid'] ? 'Đã thanh toán' : 'Chưa thanh toán'); ?></p>
+                <h3 Class="ServiceName"><?php echo $appointment['service_name']; ?></h3>
+                <p>Date: <?php echo $appointment['appointment_date']; ?></p>
+                <p>Time: <?php echo $appointment['appointment_time']; ?></p>
+                <p>Status: <?php echo ($appointment['is_paid'] ? 'Paid' : 'Unpaid'); ?></p>
                 <?php if (!$appointment['is_paid']) : ?>
                     <form method="POST">
                         <input type="hidden" name="appointment_id" value="<?php echo $appointment['id']; ?>">
-                        <button type="submit">Thanh toán</button>
+                        <button class="BtnSubmit" type="submit">Check Out</button>
                     </form>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>
     </ul>
 
-    <a href="customer_dashboard.php">Quay lại trang dashboard</a>
+    <a class="Back" href="customer_dashboard.php">Go to dashboard</a>
 </body>
 </html>
