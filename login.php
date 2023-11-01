@@ -31,13 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form Đăng nhập</title>
+  <title>Login Form</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="resource/css/style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Đăng nhập</h1>
+    <h1>Login</h1>
     <?php if (isset($error_message)) : ?>
             <p class="error"><?php echo $error_message; ?></p>
         <?php endif; ?>

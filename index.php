@@ -7,13 +7,13 @@
     </head> 
     <body> 
         <div class="container"> 
-            <h1>Trang Chủ</h1> 
-            <p>Chào mừng đến với trang web dịch vụ chăm sóc thú nuôi.</p> 
+            <h1>Home page</h1> 
+            <p>Welcome to the pet care services website.</p> 
             <p>Đăng nhập hoặc đăng ký để truy cập các dịch vụ của chúng tôi.</p> 
             <ul class="nav"> <li class="nav-item"> 
-                <a class="nav-link" href="login.php">Đăng nhập</a> 
+                <a class="nav-link" href="login.php">Login</a> 
                 </li> <li class="nav-item"> 
-                <a class="nav-link" href="register.php">Đăng ký</a> 
+                <a class="nav-link" href="register.php">Register</a> 
                 </li> 
             </ul> 
         </div> 

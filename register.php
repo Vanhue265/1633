@@ -20,33 +20,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Đăng ký</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="resource/css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Đăng ký</h1>
+        <h1>Register</h1>
         <?php if (isset($error_message)) : ?>
             <p class="error"><?php echo $error_message; ?></p>
         <?php endif; ?>
         <form method="POST">
             <div class="mb-3">
-                <label for="username" class="form-label">Tên đăng nhập:</label>
+                <label for="username" class="form-label">Email:</label>
                 <input type="text" class="form-control" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Mật khẩu:</label>
+                <label for="password" class="form-label">password:</label>
                 <input type="password" class="form-control" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="role" class="form-label">Vai trò:</label>
+                <label for="role" class="form-label">Role:</label>
                 <select class="form-select" name="role">
                     <option value="admin">Admin</option>
-                    <option value="customer">Khách hàng</option>
+                    <option value="customer">Customer</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Đăng ký</button>
+            <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
 </body>
