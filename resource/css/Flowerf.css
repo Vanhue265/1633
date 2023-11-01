@@ -1,0 +1,180 @@
+/* Style the table */
+body{
+    background-color: #F0F8FF;
+    font-family: Arial, sans-serif;
+}
+.aptbl {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.Title {
+    text-align: center;
+    color: darkblue;
+}
+
+/* Style the table header */
+.aptbl th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+
+}
+
+/* Style the table cells */
+.aptbl td {
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+/* Style the table rows */
+.aptbl tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the submit button */
+.BtnSubmit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.BtnSubmit:hover {
+    background-color: darkgreen;
+}
+
+/* Style the back link */
+.Back {
+    transform: translateY(50px);
+    display: block;
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    color: darkblue;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+.Back:hover {
+    color: blue;
+}
+
+
+/* Style the table */
+.sertbl {
+    border-collapse: collapse;
+    width: 95%;
+    margin: auto;
+}
+
+/* Style the table header */
+.sertbl th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+}
+
+/* Style the table cells */
+.sertbl td {
+    border: 5px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.sertbl td h2 {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Style the table rows */
+/* .sertbl tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
+
+/* Style the booking link */
+.sertbl a {
+    display: flexbox;
+    background-color: #4CAF50;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.sertbl a:hover{
+    background-color: darkgreen;
+}
+
+  
+  .UserDas {
+    list-style-type: none;
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+    background-color: lavender;
+  }
+  
+  /* Style the list items */
+  .UserDas li {
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  /* Style the links */
+  .UserDas a {
+    display: table-header-group;
+    color: rgb(14, 13, 13);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .SerDetails {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    max-width: 300px; /* Điều chỉnh kích thước mẫu theo nhu cầu */
+    margin: 0 auto; /* Căn giữa mẫu trên trang */
+  }
+  
+  .SerDetails label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .SerDetails input[type="date"],
+  .SerDetails input[type="time"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .SerDetails button {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateX(50%);
+  }
+  
+  .SerDetails button:hover {
+    background-color: #0056b3;
+  }
+  .serdp{
+    text-align: center;
+    font-size: x-large;
+  }

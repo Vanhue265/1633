@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'customer_dashboard.php';
 // Include file kết nối cơ sở dữ liệu
 require_once 'connect.php';
 
@@ -19,22 +19,38 @@ if (mysqli_num_rows($result) > 0) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Danh sách dịch vụ</title>
+    <link rel="stylesheet" href="resource/css/Flowerf.css">
 </head>
-<body>
-    <h1>Danh sách dịch vụ chăm sóc thú nuôi</h1>
-    <ul>
-        <?php foreach ($services as $service) : ?>
-            <li>
-                <h2><?php echo $service['name']; ?></h2>
-                <p><?php echo $service['description']; ?></p>
-                <p>Giá: <?php echo $service['price']; ?></p>
-                <a href="service_info.php?service_id=<?php echo $service['id']; ?>">Đặt lịch hẹn</a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
 
-    <a href="customer_dashboard.php">Quay lại trang dashboard</a>
+<body>
+    <h1 class="Title">List services for your pet</h1>
+    <table class= sertbl>
+        <?php $i = 0; ?>
+        <?php foreach ($services as $service) : ?>
+            <?php if ($i % 2 == 0) : ?>
+                <tr>
+                <?php endif; ?>
+                <td>
+                    <h2><?php echo $service['name']; ?></h2>
+                    <p><?php echo $service['description']; ?></p>
+                    <p>Giá: <?php echo $service['price']; ?></p>
+                    <a class href="service_info.php?service_id=<?php echo $service['id']; ?>">Make Appointment</a>
+                </td>
+                <?php if ($i % 2 == 1) : ?>
+                </tr>
+            <?php endif; ?>
+            <?php $i++; ?>
+        <?php endforeach; ?>
+        <?php if ($i % 2 == 1) : ?>
+            <td></td>
+            </tr>
+        <?php endif; ?>
+    </table>
+
+    <a href="customer_dashboard.php" class="Back">Back to Home</a>
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 <?php
 session_start();
+include 'customer_dashboard.php';
+
 
 // Include file kết nối cơ sở dữ liệu
 require_once 'connect.php';
@@ -24,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_query($conn, $query)) {
         // Lịch hẹn đã được đặt thành công, bạn có thể thực hiện chuyển hướng hoặc hiển thị thông báo.
     } else {
-        $error_message = "Lỗi khi đặt lịch hẹn.";
+        $error_message = "Error.";
     }
 }
 
@@ -38,27 +40,28 @@ $service = mysqli_fetch_assoc($result);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chi tiết dịch vụ: <?php echo $service['name']; ?></title>
+    <title>Abouts Service: <?php echo $service['name']; ?></title>
+    <link rel="stylesheet" href="resource/css/Flowerf.css">
 </head>
-<body>
-    <h1>Chi tiết dịch vụ: <?php echo $service['name']; ?></h1>
+<body class>
+    <h1 class="Title">Service: <?php echo $service['name']; ?></h1>
 
-    <p><?php echo $service['description']; ?></p>
-    <p>Giá: <?php echo $service['price']; ?></p>
+    <p class="serdp"><?php echo $service['description']; ?></p>
+    <p class="serdp">Price: <?php echo $service['price']; ?></p>
 
     <?php if (isset($error_message)) : ?>
         <p><?php echo $error_message; ?></p>
     <?php else : ?>
-        <form method="POST">
+        <form method="POST" class="SerDetails">
             <input type="hidden" name="service_id" value="<?php echo $service['id']; ?>">
-            <label for="appointment_date">Chọn ngày lịch hẹn:</label>
+            <label for="appointment_date">Choose the date for appoitment:</label>
             <input type="date" name="appointment_date" required>
-            <label for="appointment_time">Chọn giờ lịch hẹn:</label>
+            <label for="appointment_time">Choose the time:</label>
             <input type="time" name="appointment_time" required>
-            <button type="submit">Đặt lịch hẹn</button>
+            <button type="submit">Create Apointment</button>
         </form>
     <?php endif; ?>
 
-    <a href="services.php">Quay lại danh sách dịch vụ</a>
+    <a href="services.php" class="Back">Back to list services</a>
 </body>
 </html>
